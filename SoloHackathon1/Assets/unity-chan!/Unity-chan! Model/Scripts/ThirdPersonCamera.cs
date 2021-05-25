@@ -41,10 +41,7 @@ namespace UnityChan
 			if (Input.GetButton ("Fire1")) {	// left Ctlr	
 				// Change Front Camera
 				setCameraPositionFrontView ();
-			} else if (Input.GetButton ("Fire2")) {	//Alt	
-				// Change Jump Camera
-				setCameraPositionJumpView ();
-			} else {	
+			}else {	
 				// return the camera to standard position and direction
 				setCameraPositionNormalView ();
 			}
@@ -70,14 +67,6 @@ namespace UnityChan
 			bQuickSwitch = true;
 			transform.position = frontPos.position;	
 			transform.forward = frontPos.forward;
-		}
-
-		void setCameraPositionJumpView ()
-		{
-			// Change Jump Camera
-			bQuickSwitch = false;
-			transform.position = Vector3.Lerp (transform.position, jumpPos.position, Time.fixedDeltaTime * smooth);	
-			transform.forward = Vector3.Lerp (transform.forward, jumpPos.forward, Time.fixedDeltaTime * smooth);		
 		}
 	}
 }
